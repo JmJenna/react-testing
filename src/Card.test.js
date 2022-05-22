@@ -1,0 +1,14 @@
+import React from "react";
+import { render, fireEvent } from "@testing-library/react";
+import Card from './Card';
+
+test("it renders without crashing", ()=>{
+    render(<Card />);
+})
+
+test("matches snapShot", ()=>{
+    let {asFragment} = render(<Card />);
+    expect(asFragment()).toMatchSnapshot();
+  })
+
+  
